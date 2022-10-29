@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 
 public class UtilPropMcFarland {
 	static final boolean _W = System.getProperty("os.name").toLowerCase().contains("windows");
-	static String _PROP_FILENAME_WIN_LOCAL = "E:\\workspaceCSCI4830\\workspaceCSCI4830-ex-0908_McFarland\\webproject-ex-0908-McFarland\\src\\main\\webapp\\config.properties";
+	static String _PROP_FILENAME_WIN_LOCAL = "E:\\workspaceCSCI4830\\workspace4830-TE-McFarland\\Expense-List\\webproject-TE-McFarland\\src\\main\\webapp\\config.properties";
 	static String _PROP_FILENAME_OSX_LOCAL = "/YOUR_PATH/webproject/WebContent/config.properties";
 	// * Remote server path
 	static String _PROP_FILENAME_REMOTE = "/var/lib/tomcat9/webapps/webproject/config.properties";

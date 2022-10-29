@@ -22,22 +22,22 @@ public class InsertMcFarland extends HttpServlet {
    }
 
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      String userName = request.getParameter("userName");
-      String email = request.getParameter("email");
-      String phone = request.getParameter("phone");
-      String address = request.getParameter("address");
+      String name = request.getParameter("name");
+      String cost = request.getParameter("cost");
+      String desc = request.getParameter("desc");
+      String date = request.getParameter("date");
 
       Connection connection = null;
-      String insertSql = " INSERT INTO MyTableMcFarland0908 (id, MYUSER, EMAIL, PHONE, ADDRESS) values (default, ?, ?, ?, ?)";
+      String insertSql = " INSERT INTO expenseHeader (id, NAME, COST, EXP_DESC, DATE) values (default, ?, ?, ?, ?)";
 
       try {
          DBConnectionMcFarland.getDBConnection();
          connection = DBConnectionMcFarland.connection;
          PreparedStatement preparedStmt = connection.prepareStatement(insertSql);
-         preparedStmt.setString(1, userName);
-         preparedStmt.setString(2, email);
-         preparedStmt.setString(3, phone);
-         preparedStmt.setString(4, address);
+         preparedStmt.setString(1, name);
+         preparedStmt.setString(2, cost);
+         preparedStmt.setString(3, desc);
+         preparedStmt.setString(4, date);
          preparedStmt.execute();
          connection.close();
       } catch (Exception e) {
@@ -56,14 +56,14 @@ public class InsertMcFarland extends HttpServlet {
             "<h2 align=\"center\">" + title + "</h2>\n" + //
             "<ul>\n" + //
 
-            "  <li><b>User Name</b>: " + userName + "\n" + //
-            "  <li><b>Email</b>: " + email + "\n" + //
-            "  <li><b>Phone</b>: " + phone + "\n" + //
-            "  <li><b>Address</b>: " + address + "\n" + //
+            "  <li><b>Expense Name</b>: " + name + "\n" + //
+            "  <li><b>Cost</b>: " + cost + "\n" + //
+            "  <li><b>Description</b>: " + desc + "\n" + //
+            "  <li><b>Date</b>: " + date + "\n" + //
 
             "</ul>\n");
 
-      out.println("<a href=/webproject/search_mcfarland.html>Search Data</a> <br>");
+      out.println("<a href=/webproject-TE-McFarland/search_mcfarland.html>Search Data</a> <br>");
       out.println("</body></html>");
    }
 
